@@ -65,11 +65,18 @@ class MainPage(webapp2.RequestHandler):
 
         self.response.write(t.render(data))
 
+class LogInPage(webapp2.RequestHandler):
+    def get(self):
+        t = the_jinja_env.get_template('/templates/login.html')
+        self.response.write(t.render())
+    def post(self):
+        self.response.write('<h1>Request Received</h1>')
+
 class LoadPage(webapp2.RequestHandler):
     def get(self):
         seed_data()
         t = the_jinja_env.get_template('/templates/loader.html')
         self.response.write(t.render())
 
-routes = [('/',MainPage),('/load',LoadPage)]
+routes = [('/',LogInPage),('/home',MainPage),('/load',LoadPage)]
 app = webapp2.WSGIApplication(routes, debug=True)

@@ -1,5 +1,13 @@
 from google.appengine.ext import ndb
 
+class Login(ndb.Model):
+	username = ndb.StringProperty(required=True)
+	password = ndb.StringProperty(required=True)
+	memberType = ndb.IntegerProperty(required=True,default=1)
+
+class Member(ndb.Model):
+	fname = ndb.StringProperty(required=True)
+	lanme = ndb.StringProperty(required)
 class Student(ndb.Model):
 	fname = ndb.StringProperty(required=True)
 	lname = ndb.StringProperty(required=True)
@@ -18,4 +26,5 @@ class Organizer(ndb.Model):
 	task = ndb.KeyProperty(Task,required=True)
 	priority = ndb.IntegerProperty(default=0)
 	completed = ndb.BooleanProperty(default=False)
+
 	

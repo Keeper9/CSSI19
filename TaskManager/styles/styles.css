@@ -60,3 +60,33 @@ div
     justify-content: center;
     align-items: center;
 }
+
+#err-msg
+{
+    font-size: 6px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#login
+{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    border-width: 2px;
+    border-style: double;
+    border-color: blue;
+    padding: 2em;
+}
+
+label
+{
+    width: 25%;
+}
+input[type=text], input[type=password]
+{
+    width: 70%;
+}
